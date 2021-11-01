@@ -4,6 +4,8 @@ var updateTimer;
 var lastStingTime;
 
 function start() {
+
+    document.getElementById("reload").onclick = function() {restart()};
     //create bear
     bear = new Bear();
 
@@ -18,11 +20,6 @@ function start() {
     updateBees();
     //take start time 
     lastStingTime = new Date();
-
-    let score = hits.innerHTML;
-    if (score >= 1000){
-        restart();
-    }
 }
 
 class Bear {
@@ -186,7 +183,7 @@ function makeBees() {
         var bee = new Bee(num); //create object and its IMG element 
         bee.display(); //display the bee 
         bees.push(bee); //add the bee object to the bees array 
-        i++; 
+        i++;
     } 
 }
 
