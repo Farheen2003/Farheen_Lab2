@@ -10,7 +10,7 @@ function start() {
     bear = new Bear();
 
     // Add an event listener to the keypress event.
-    document.addEventListener("keydown", moveBear, true);
+    document.addEventListener("keydown", moveBear, false);
 
     document.addEventListener("keydown", startgame);
 
