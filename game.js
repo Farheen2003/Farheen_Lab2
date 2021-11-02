@@ -10,7 +10,9 @@ function start() {
     bear = new Bear();
 
     // Add an event listener to the keypress event.
-    document.addEventListener("keydown", moveBear, false);
+    document.addEventListener("keydown", moveBear, true);
+
+    document.addEventListener("keydown", startgame);
 
     //create new array for bees 
     bees = new Array(); 
@@ -19,9 +21,11 @@ function start() {
     makeBees();
     updateBees();
     //take start time 
-    lastStingTime = new Date();
 }
 
+function startgame(){
+    lastStingTime = new Date();
+}
 class Bear {
     constructor() {
 
@@ -162,7 +166,7 @@ function createBeeImg(wNum) {
     img.style.top = (y) + "px";
     //return the img object
     return img;
-   }
+}
 
 function getRandomInt(max){
        return Math.floor(Math.random() * max);
@@ -196,7 +200,7 @@ function moveBees() {
         let dy = getRandomInt(2 * speed) - speed; 
         bees[i].move(dx, dy); 
         isHit(bees[i], bear);
-    } 
+    }
 }
 
 function updateBees() { // update loop for game 
@@ -212,10 +216,7 @@ function updateBees() { // update loop for game
         alert(
             'Game Over!!'
         ) 
-    }
-    //let period = document.getElementById("periodTimer"); //modify this to control refresh period 
-    //update the timer for the next move 
-    //updateTimer = setTimeout('updateBees()', period); 
+    } 
 }
 
 function isHit(defender, offender) { 
@@ -266,12 +267,3 @@ function overlap(element1, element2) {
 function restart(){
     window.location.reload()
 }
-
-
-
-
-
-
-
-
-
