@@ -20,10 +20,10 @@ function start() {
     //create bees 
     makeBees();
     updateBees();
-    //take start time 
 }
 
 function startgame(){
+    //take start time
     lastStingTime = new Date();
 }
 class Bear {
